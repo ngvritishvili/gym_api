@@ -1,0 +1,6 @@
+- ## Auth
+    - ## [Authorization](/{{route}}/{{version}}/authorization)
+    - ## [Password Reset](/{{route}}/{{version}}/passwordreset)
+- ## Application
+    - ## [Events](/{{route}}/{{version}}/events)
+    - ## [Products](/{{route}}/{{version}}/products)
