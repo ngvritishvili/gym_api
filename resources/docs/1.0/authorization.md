@@ -5,9 +5,9 @@
 - [Registration](#registration)
 - [Login](#login)
 - [Logout](#logout)
-- Veify
-  - [Email](#verify-email)
-- [Refresh Token](#refresh_token)
+- [Veify Email](#verify-email)
+- [Get Token](#get_token)
+- [Get Refresh Token](#refresh_token)
 
 <a name="registration"></a>
 ## Registration
@@ -42,22 +42,6 @@ This endpoint is used for user authorization
 * `access_token` 
 * `refresh_token` not in social login.
 
-<a name="social-login"></a>
-## Login
-### POST api/auth/social/callback
-This endpoint is used for user authorization with facebook, gmail, twitter or github
-
-#### Fields
-* `social_type` string, mandatory (like: google, facebook, twitter)
-* `access_token` token, mandatory
-#### Response
-* `user`
-* `id`
-* `username`
-* `email`
-* `access_token`
-* `refresh_token` not in social login.
-
 <a name="logout"></a>
 ## Logout
 ### POST api/logout
@@ -73,16 +57,56 @@ user is automatically redirected to FE url after verification
 * `status` success
 * `access_token` token
 
-<a name="refresh_token"></a>
-### refresh token
+<a name="get_token"></a>
+### Get token
 ### oauth/token
 endpoint give token and refresh token by credential's
 #### Fields
-* `grant_type` => password
+* `grant_type` password
 * `client_id` client_id
 * `client_secret` client_secret
-* `username` 
-* `password` 
+* `username` "exampleuser@gym.com"
+* `password` "examplePassword"
 * `scope` *
 
 #### Response
+
+<a name="refresh_token"></a>
+### Refresh token
+### oauth/token
+endpoint give token and refresh token by credential's
+#### Fields
+* `grant_type` refresh_token
+* `client_id` client_id
+* `client_secret` client_secret
+* `refresh_token` "def502003ff030468....."
+
+#### Response
+
+# Social login
+
+<a name="social-login"></a>
+## Login With Token
+### POST api/auth/social/callback
+This endpoint is used for user authorization with facebook, gmail, twitter or github
+
+#### Fields
+* `social_type` string, mandatory (like: google, facebook, twitter)
+* `access_token` token, mandatory
+#### Response
+* `user`
+* `id`
+* `username`
+* `email`
+* `access_token`
+* `refresh_token` not in social login.
+
+### Get Google Token
+* `Example URL` : ""https://accounts.google.com/o/oauth2/v2/auth?client_id=816091102818-gbopsrpbts4tqtq080ba4vp4j9qo6p7e.apps.googleusercontent.com&redirect_uri=http://localhost:8000/api/auth/social/callback&response_type=token&scope=https://www.googleapis.com/auth/userinfo.email"
+
+#### For this URI here are params you need to generate token
+* `client_id` = (example: 816091102818-gbopsrpbts4tqtq080ba4vp4j9qo6p7e.apps.googleusercontent.com)
+* `redirect_uri` = (example: http://localhost:8000/api/auth/social/callback)
+* `response_type` = token
+* `scope` = https://www.googleapis.com/auth/userinfo.email   (this scope enough to register user)
+#### end with this token on this endpoint : api/auth/social/callback  I will register user.
