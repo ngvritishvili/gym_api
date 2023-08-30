@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
+use App\Http\Resources\EventResource;
 use App\Models\Event;
 use App\Services\EventService;
 
@@ -41,7 +42,7 @@ class EventController extends Controller
     {
         try {
             return response()->json([
-                $this->eventService->store($request),
+                EventResource::make($this->eventService->store($request)),
             ]);
         }catch (\Exception $exception)
         {
@@ -58,7 +59,7 @@ class EventController extends Controller
     {
         try {
             return response()->json([
-                $this->eventService->show($event),
+                EventResource::make($this->eventService->show($event)),
             ]);
         }catch (\Exception $exception)
         {
@@ -75,7 +76,7 @@ class EventController extends Controller
     {
         try {
             return response()->json([
-                $this->eventService->update($request, $event),
+                EventResource::make($this->eventService->update($request, $event)),
             ]);
         }catch (\Exception $exception)
         {
@@ -92,7 +93,7 @@ class EventController extends Controller
     {
         try {
             return response()->json([
-                $this->eventService->delete($event),
+               'delete_status' => $this->eventService->delete($event),
             ]);
         }catch (\Exception $exception)
         {
