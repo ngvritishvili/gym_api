@@ -27,6 +27,12 @@ class ProductService
     public function store(StoreProductRequest $request)
     {
         $product = Product::create($request->validated());
+
+        if ($request->hasFile('images')) {
+            $product->addMediaFromRequest('images')
+                ->toMediaCollection('products');
+        }
+
         auth()->user()->products()->save($product);
 
         return $product;
@@ -35,6 +41,13 @@ class ProductService
     public function update(UpdateProductRequest $request, Product $product)
     {
         $product->update($request->validated());
+
+            if ($images = $request->file('images')) {
+                $product->clearMediaCollection('products');
+                foreach ($images as $image) {
+                    $product->addMedia($image)->toMediaCollection('products');
+                }
+            }
 
         return $product;
     }

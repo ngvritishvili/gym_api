@@ -45,14 +45,14 @@ On this endpoint admin can create Product (only super admin)
 * `description` - string, nullable
 * `weight` - float, mandatory
 * `price` - decimal, mandatory
-* `image` - date, nullable
+* `images` - date, nullable
 
 #### Response
 * `name`
 * `description`
 * `weight`
 * `price`
-* `image`
+* `images`
 
 
 <a name="update-product"></a>
@@ -65,7 +65,7 @@ On this endpoint super admin can update Product (only super admin)
 * `description`
 * `weight`
 * `price`
-* `image`
+* `images`
 
 
 #### Response
@@ -73,7 +73,7 @@ On this endpoint super admin can update Product (only super admin)
 
 <a name="delete-product"></a>
 ## Delete Product
-### DELETE api/products
+### DELETE api/products/{id}
 On this endpoint super admin can delete Product (Only Super Admin)
 
 #### Fields
