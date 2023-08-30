@@ -28,10 +28,9 @@ class ProductService
     {
         $product = Product::create($request->validated());
 
-        if ($request->hasFile('images'))
-        {
+        if ($request->hasFile('images')) {
             $product->addMediaFromRequest('images')
-                ->toMediaCollection();
+                ->toMediaCollection('products');
         }
 
         auth()->user()->products()->save($product);
@@ -43,11 +42,12 @@ class ProductService
     {
         $product->update($request->validated());
 
-        if ($request->hasFile('images'))
-        {
-            $product->syncFromMediaLibraryRequest($request->images)
-                ->toMediaCollection();
-        }
+            if ($images = $request->file('images')) {
+                $product->clearMediaCollection('products');
+                foreach ($images as $image) {
+                    $product->addMedia($image)->toMediaCollection('products');
+                }
+            }
 
         return $product;
     }
