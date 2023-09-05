@@ -2,14 +2,27 @@
 
 ---
 
+- [Settings](#setting)
 - [Set Up Steps](#step-setting)
 - [Set Up Calories](#calories-setting)
 
 
 
+<a name="setting"></a>
+## Settings all
+### GET api/settings
+On this endpoint anyone can see params.
+
+#### Fields
+* ``
+
+#### Response
+* `settings`
+
+
 <a name="step-setting"></a>
 ## Step Settings (Only Super Amdin can change)
-### GET api/step/settings
+### POST api/step/settings
 On this endpoint admin can change settings for steps and time combination.
 
 #### Fields
@@ -21,8 +34,8 @@ On this endpoint admin can change settings for steps and time combination.
 
 
 <a name="calories-setting"></a>
-## Step Settings (Only Super Amdin can change)
-### GET api/calorie/settings
+## Calories Settings (Only Super Amdin can change)
+### POST api/calorie/settings
 On this endpoint admin can change settings for calories and time combination.
 
 #### Fields
