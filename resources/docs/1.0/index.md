@@ -4,5 +4,5 @@
 - ## Application
     - ## [Events](/{{route}}/{{version}}/events)
     - ## [Products](/{{route}}/{{version}}/products)
-    - ## [Products](/{{route}}/{{version}}/settings)
-    - ## [Products](/{{route}}/{{version}}/UserEvent)
+    - ## [Settings](/{{route}}/{{version}}/settings)
+    - ## [User Event](/{{route}}/{{version}}/UserEvent)
