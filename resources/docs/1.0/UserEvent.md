@@ -8,7 +8,7 @@
 
 <a name="roll"></a>
 ## Get winning ticket
-### GET api/events/roll/{event_id}/tickets
+### GET api/events/roll/{event_id}/ticket
 On this endpoint Super admin can get winning ticket random user
 for specific event.
 
