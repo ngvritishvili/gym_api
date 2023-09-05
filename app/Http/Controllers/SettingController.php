@@ -6,9 +6,28 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
+use PHPUnit\Exception;
 
 class SettingController extends Controller
 {
+
+    public function index()
+    {
+        try {
+            $step = DB::table('step_controll')->get();
+            $calories = DB::table('calorie_controll')->get();
+
+            return response()->json([
+                $calories->merge($step),
+            ]);
+
+        } catch (\Exception $exception) {
+            return response()->json([
+                'error' => $exception->getMessage(),
+            ]);
+        }
+    }
+
     public function setupSteps(Request $request)
     {
         $this->checkAdmin();

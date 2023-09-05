@@ -26,6 +26,7 @@ Route::group(['middleware' => ['auth:api']], function () {
 
     Route::post('step/settings', [SettingController::class, 'setupSteps']);
     Route::post('calorie/settings', [SettingController::class, 'setupCalories']);
+    Route::get('settings', [SettingController::class, 'index']);
 
     Route::post('events/roll/{event}', [EventController::class, 'rollUser']);
     Route::post('events/roll/{event}/ticket', [EventController::class, 'getWinner']);
