@@ -3,6 +3,7 @@
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,12 @@ Route::group(['middleware' => ['auth:api']], function () {
         'products' => ProductController::class,
         'events' => EventController::class,
     ]);
+
+    Route::post('step/settings', [SettingController::class, 'setupSteps']);
+    Route::post('calorie/settings', [SettingController::class, 'setupCalories']);
+
+    Route::post('events/roll/{event}', [EventController::class, 'rollUser']);
+    Route::post('events/roll/{event}/ticket', [EventController::class, 'getWinner']);
 });
 
 Route::apiResources([

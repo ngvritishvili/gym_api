@@ -29,7 +29,7 @@ class EventPolicy
      */
     public function create(User $user): bool
     {
-       return $user->isSuperAdmin();
+        return $user->isSuperAdmin();
     }
 
     /**
@@ -37,7 +37,7 @@ class EventPolicy
      */
     public function update(User $user, Event $event): bool
     {
-       return $user->isSuperAdmin();
+        return $user->isSuperAdmin();
     }
 
     /**
@@ -63,4 +63,20 @@ class EventPolicy
     {
         return $user->isSuperAdmin();
     }
+
+//    /**
+//     * Determine whether the user can roll user for specific event.
+//     */
+//    public function rollUser(User $user, Event $event): bool
+//    {
+//        return $user->isSuperAdmin();
+//    }
+//
+//    /**
+//     * Determine whether the user can unRoll User from specific event.
+//     */
+//    public function unRollUser(User $user, Event $event): bool
+//    {
+//        return $user->isSuperAdmin();
+//    }
 }
