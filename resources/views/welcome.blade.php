@@ -15,10 +15,18 @@
 </head>
 <body class="container">
 <div class="col-12 d-flex justify-content-center">
-    <h1 class="mt-5">Revaz Beltadze</h1>
+    <h1 class="col-6 mt-5 justify-content-center">რევაზ ბელთაძესთვის</h1>
 </div>
 <div class="col-12 d-flex justify-content-center">
-    <video width="1024" height="720" controls loop >
+    <h1 class="col-6 mt-5 justify-content-center">ვისგან? გამოჩნდება: </h1>
+
+</div>
+<div class="col-12 d-flex justify-content-center">
+    <p class="col-6 mt-5 justify-content-center text-danger" style="font-size: 29px;" id="countdown"></p>
+
+</div>
+<div class="col-12 d-flex justify-content-center">
+    <video width="1024" height="720" controls loop>
         <source src="{{ asset('/imgs/secretsanta.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -28,3 +36,30 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<script>
+    // Set the target date
+    const targetDate = moment('2023-12-29 18:00:00');
+
+
+    // Update the countdown every second
+    function updateCountdown() {
+        const currentDate = moment();
+        const duration = moment.duration(targetDate.diff(currentDate));
+
+        const days = Math.floor(duration.asDays());
+        const hours = duration.hours();
+        const minutes = duration.minutes();
+        const seconds = duration.seconds();
+
+        // Display the countdown
+        document.getElementById('countdown').innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+    }
+
+    // Initial update
+    updateCountdown();
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+</script>
