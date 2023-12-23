@@ -20,14 +20,14 @@
     /* Style to round the video container */
     .rounded-video-container {
         overflow: hidden;
-        border-top-left-radius: 20px; /* Adjust the border-radius value */
-        border-top-right-radius: 20px; /* Adjust the border-radius value */
+        border-top-left-radius: 10px; /* Adjust the border-radius value */
+        border-top-right-radius: 10px; /* Adjust the border-radius value */
     }
 
     /* Style to round the video element directly */
     .rounded-video {
-        border-top-left-radius: 20px; /* Adjust the border-radius value */
-        border-top-right-radius: 20px; /* Adjust the border-radius value */
+        border-top-left-radius: 10px; /* Adjust the border-radius value */
+        border-top-right-radius: 10px; /* Adjust the border-radius value */
     }
 </style>
 <div class="col-12 d-flex justify-content-center shadow-sm  rounded">
@@ -42,7 +42,7 @@
 
 </div>
 <div class="col-12 d-flex justify-content-center rounded-video-container">
-    <video width="1024" height="720" controls loop class="rounded-video">
+    <video width="100%" height="auto" controls loop class="rounded-video">
         <source src="{{ asset('/imgs/secretsanta.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
