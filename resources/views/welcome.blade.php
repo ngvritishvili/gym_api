@@ -30,14 +30,14 @@
         border-top-right-radius: 20px; /* Adjust the border-radius value */
     }
 </style>
-<div class="col-12 d-flex justify-content-center shadow-sm  rounded m-3">
+<div class="col-12 d-flex justify-content-center shadow-sm  rounded">
     <h1 class="col-6 mt-5 justify-content-center">რევაზ ბელთაძესთვის</h1>
 </div>
-<div class="col-12 d-flex justify-content-center shadow-sm  rounded  m-3">
+<div class="col-12 d-flex justify-content-center shadow-sm  rounded">
     <h1 class="col-6 mt-5 justify-content-center">ვისგან? გამოჩნდება: </h1>
 
 </div>
-<div class="col-12 d-flex justify-content-center shadow-sm  rounded  m-3">
+<div class="col-12 d-flex justify-content-center shadow-sm  rounded">
     <p class="col-6 mt-5 justify-content-center text-danger" style="font-size: 29px;" id="countdown"></p>
 
 </div>
