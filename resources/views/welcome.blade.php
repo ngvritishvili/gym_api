@@ -13,20 +13,36 @@
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
-<body class="container">
-<div class="col-12 d-flex justify-content-center">
+<body class="container" style="background: linear-gradient(to right, #411185, #2f0170); /* Adjust the gradient colors */
+    color: white; /* Adjust the text color */
+    padding: 20px;">
+<style>
+    /* Style to round the video container */
+    .rounded-video-container {
+        overflow: hidden;
+        border-top-left-radius: 20px; /* Adjust the border-radius value */
+        border-top-right-radius: 20px; /* Adjust the border-radius value */
+    }
+
+    /* Style to round the video element directly */
+    .rounded-video {
+        border-top-left-radius: 20px; /* Adjust the border-radius value */
+        border-top-right-radius: 20px; /* Adjust the border-radius value */
+    }
+</style>
+<div class="col-12 d-flex justify-content-center shadow-sm  rounded m-3">
     <h1 class="col-6 mt-5 justify-content-center">რევაზ ბელთაძესთვის</h1>
 </div>
-<div class="col-12 d-flex justify-content-center">
+<div class="col-12 d-flex justify-content-center shadow-sm  rounded  m-3">
     <h1 class="col-6 mt-5 justify-content-center">ვისგან? გამოჩნდება: </h1>
 
 </div>
-<div class="col-12 d-flex justify-content-center">
+<div class="col-12 d-flex justify-content-center shadow-sm  rounded  m-3">
     <p class="col-6 mt-5 justify-content-center text-danger" style="font-size: 29px;" id="countdown"></p>
 
 </div>
-<div class="col-12 d-flex justify-content-center">
-    <video width="1024" height="720" controls loop>
+<div class="col-12 d-flex justify-content-center rounded-video-container">
+    <video width="1024" height="720" controls loop class="rounded-video">
         <source src="{{ asset('/imgs/secretsanta.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -41,7 +57,6 @@
 <script>
     // Set the target date
     const targetDate = moment('2023-12-29 18:00:00');
-
 
     // Update the countdown every second
     function updateCountdown() {
@@ -63,3 +78,5 @@
     // Update the countdown every second
     setInterval(updateCountdown, 1000);
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Snowstorm/20131208/snowstorm-min.js"></script>
+
