@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/api/docs');
+Route::get('/for/revaz', function () {
+    return view('welcome');
+//    return redirect('/api/docs');
 });
