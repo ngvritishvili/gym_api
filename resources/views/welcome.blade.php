@@ -33,17 +33,16 @@
 <div class="col-12 d-flex justify-content-center shadow-sm  rounded">
     <h1 class="col-6 mt-5 justify-content-center">რევაზ ბელთაძესთვის</h1>
 </div>
-<div class="col-12 d-flex justify-content-center shadow-sm  rounded">
-    <h1 class="col-6 mt-5 justify-content-center">ვისგან? გამოჩნდება: </h1>
-
+<div class="col-12 d-flex justify-content-center shadow-sm  rounded mb-5">
+    <h1 class="col-6 mt-5 justify-content-center">მოწყენილი რომ არ უყუროს სხვების საჩუქრებს &#128513; &#129312;</h1>
 </div>
-<div class="col-12 d-flex justify-content-center shadow-sm  rounded">
-    <p class="col-6 mt-5 justify-content-center text-danger" style="font-size: 29px;" id="countdown"></p>
+{{--<div class="col-12 d-flex justify-content-center shadow-sm  rounded">--}}
+{{--    <p class="col-6 mt-5 justify-content-center text-danger" style="font-size: 29px;" id="countdown"></p>--}}
 
-</div>
+{{--</div>--}}
 <div class="col-12 d-flex justify-content-center rounded-video-container">
     <video width="100%" height="auto" controls loop class="rounded-video">
-        <source src="{{ asset('/imgs/secretsanta.mp4') }}" type="video/mp4">
+        <source src="{{ asset('/imgs/mag2.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </div>
